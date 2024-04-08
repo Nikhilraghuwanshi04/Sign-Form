@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import SignUp from "./Components/SignUp";
+import Login from "./Components/Login";
 
 function App() {
+  const handleSignUp = (username, password) => {
+    // Perform signup logic here
+    console.log("Sign up:", (username, password));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp onSignUp={handleSignUp} />} />
+        <Route path="/" element={<SignUp onSignUp={handleSignUp} />} />
+      </Routes>
+    </Router>
   );
 }
 

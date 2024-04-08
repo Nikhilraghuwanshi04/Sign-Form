@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #333; /* Navbar ka background color */
+    padding: 10px 20px; /* Padding around navbar */
+  }
+  
+  .navbar ul {
+    list-style-type: none; /* Remove bullets from list */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    display: inline; /* List items ko inline display karna */
+    margin-right: 20px; /* Spacing between list items */
+  }
+  
+  .navbar ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Link ka text color */
+    font-weight: bold; /* Bold font weight */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .navbar ul li a:hover {
+    color: #ff9900; /* Change color on hover */
+  }
+  
